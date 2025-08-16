@@ -1,103 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BerksAPK ⚡ – APK Download</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #0d1117, #1f2937);
-      color: white;
-      text-align: center;
-    }
-    header {
-      background: #111827;
-      padding: 20px;
-      font-size: 26px;
-      font-weight: bold;
-      color: #22c55e;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.6);
-    }
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 30px;
-    }
-    .card {
-      background: #1f2937;
-      border-radius: 15px;
-      padding: 20px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
-    }
-    .card img {
-      width: 100px;
-      height: 100px;
-      border-radius: 20px;
-      margin-bottom: 15px;
-    }
-    .card h2 {
-      font-size: 20px;
-      margin: 10px 0;
-      color: #60a5fa;
-    }
-    .card p {
-      font-size: 14px;
-      color: #d1d5db;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 20px;
-      background: #2563eb;
-      color: white;
-      border-radius: 10px;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
-    }
-    .btn:hover {
-      background: #1d4ed8;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BerksAPK ⚡</title>
+<link rel="icon" href="favicon.png" type="image/png">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(-45deg, #0d1117, #1e3a8a, #2563eb, #0d1117);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease forwards;
+  }
+
+  .search-box {
+    margin: 15px auto 30px auto;
+    max-width: 300px;
+    width: 90%;
+    animation: fadeInUp 1.2s ease forwards;
+  }
+
+  .search-box input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 15px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    box-shadow: 0 0 10px rgba(45, 212, 191, 0.6);
+    background: #1a1f44;
+    color: #e8eeff;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .search-box input:focus {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px #2dd4bf;
+  }
+
+  .apps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 15px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeInUp 1.5s ease forwards;
+    text-align: center;
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+  }
+
+  .card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 25%;
+    margin-bottom: 10px;
+  }
+
+  .card h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #22c55e;
+    animation: fadeInUp 1.3s ease forwards;
+  }
+
+  .card p {
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: #d1d5db;
+    animation: fadeInUp 1.4s ease forwards;
+  }
+
+  .btn {
+    padding: 8px 14px;
+    background: #2563eb;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    display: inline-block;
+    animation: fadeInUp 1.5s ease forwards;
+  }
+
+  .btn:hover {
+    background: #1d4ed8;
+  }
+
+  footer {
+    margin-top: 30px;
+    padding: 15px;
+    color: #8ea3c8;
+    font-size: 12px;
+    text-align: center;
+    animation: fadeInUp 2s ease forwards;
+  }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 1.6rem; }
+    .card img { width: 70px; height: 70px; }
+    .card h2 { font-size: 14px; }
+    .card p { font-size: 11px; }
+    .btn { font-size: 12px; padding: 6px 10px; }
+  }
+</style>
 </head>
 <body>
-  <header>BerksAPK ⚡</header>
 
-  <div class="container">
+<h1>BerksAPK ⚡</h1>
 
-    <!-- CapCut Pro -->
-    <div class="card">
-      <img src="https://i.postimg.cc/9Fs4wXCJ/images.png" alt="CapCut Pro">
-      <h2>CapCut Pro ⚡</h2>
-      <p>Size: 250 MB</p>
-      <a class="btn" href="/capcutpro/" target="_blank">Download</a>
-    </div>
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="Search apps...">
+</div>
 
-    <!-- YouTube Pro -->
-    <div class="card">
-      <img src="https://i.postimg.cc/9Fs4wXCJ/images.png" alt="YouTube Pro">
-      <h2>YouTube Pro ⚡</h2>
-      <p>Size: 105 MB</p>
-      <a class="btn" href="/youtubepro/" target="_blank">Download</a>
-    </div>
+<div class="apps" id="apkList">
 
-    <!-- MicroGtls -->
-    <div class="card">
-      <img src="https://i.postimg.cc/5N9c58Nt/b9a8981007bb7615d0d84240fcc0606cf0b89610a9a407f3eb7170d8301a9a21-200.jpg" alt="MicroGtls">
-      <h2>MicroGtls ⚡</h2>
-      <p>Size: 38 MB</p>
-      <a class="btn" href="/microgtls/" target="_blank">Download</a>
-    </div>
-
+  <!-- CapCut Pro -->
+  <div class="card" data-name="CapCut Pro">
+    <img src="https://i.postimg.cc/PqkHc8wK/capcut-logo-on-transparent-white-background-free-vector.jpg" alt="CapCut Pro">
+    <h2>CapCut Pro</h2>
+    <p>Size: 250 MB</p>
+    <a class="btn" href="/capcutpro/" target="_blank">Download</a>
   </div>
+
+  <!-- YouTube Pro -->
+  <div class="card" data-name="YouTube Pro">
+    <img src="https://i.postimg.cc/9Fs4wXCJ/images.png" alt="YouTube Pro">
+    <h2>YouTube Pro</h2>
+    <p>Size: 105 MB</p>
+    <a class="btn" href="/youtubepro/" target="_blank">Download</a>
+  </div>
+
+  <!-- MicroGtls -->
+  <div class="card" data-name="MicroGtls">
+    <img src="https://i.postimg.cc/5N9c58Nt/b9a8981007bb7615d0d84240fcc0606cf0b89610a9a407f3eb7170d8301a9a21-200.jpg" alt="MicroGtls">
+    <h2>MicroGtls</h2>
+    <p>Size: 38 MB</p>
+    <a class="btn" href="/microgtls/" target="_blank">Download</a>
+  </div>
+
+</div>
+
+<footer>
+  &copy; 2025 BerksAPK ⚡ All rights reserved
+</footer>
+
+<script>
+const searchInput = document.getElementById('searchInput');
+const apkList = document.getElementById('apkList');
+const cards = apkList.getElementsByClassName('card');
+
+searchInput.addEventListener('input', () => {
+  const filter = searchInput.value.toLowerCase();
+  Array.from(cards).forEach(card => {
+    const name = card.getAttribute('data-name').toLowerCase();
+    card.style.display = name.includes(filter) ? '' : 'none';
+  });
+});
+</script>
+
 </body>
 </html>
